@@ -8,7 +8,7 @@ const searchElement = document.querySelector('input')
 const message1 = document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2')
 
-message1.textContent = 'From JavaScript'
+message1.textContent = 'Please enter a location to retrieve its weather forecast'
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -26,7 +26,9 @@ weatherForm.addEventListener('submit', (e) => {
                 message1.textContent = data.error
             } else {
                 message1.textContent = data.location
-                message2.textContent = data.forecast
+                const forecastData = JSON.stringify(data.forecast)
+                //data.forecast.current_temp
+                message2.textContent = forecastData
             }
         })
     })
