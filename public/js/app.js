@@ -1,15 +1,6 @@
 console.log('client side java script is loaded')
 
-fetch('http://localhost:3000/weather?address=Chicago').then((response) => {
-    response.json().then((data) => {
-        if (data.error) {
-            console.log(data.erro)
-        } else {
-            console.log(data.location)
-            console.log(data.forecast)
-        }
-    })
-})
+
 
 const weatherForm = document.querySelector('form')
 const searchElement = document.querySelector('input')
@@ -24,7 +15,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     const searchLocation = searchElement.value
     console.log(searchLocation)
-    url = 'http://localhost:3000/weather?address=' + searchLocation
+    url = '/weather?address=' + searchLocation
 
     message1.textContent = 'Loading...'
     message1.textContent = ''
